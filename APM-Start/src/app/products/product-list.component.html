@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Product List
+        {{pageTitle}}
     </div>
     <div class='panel-body'>
         <div class='row'>
@@ -15,12 +15,11 @@
             </div>
         </div>
         <div class='table-responsive'>
-            <table class='table'
-                    *ngIf='products && products.length'>
+            <table class='table' *ngIf='products && products.length'>
                 <thead>
                     <tr>
                         <th>
-                            <button class='btn btn-primary'></button>
+                            <button class='btn btn-primary'>Show Image</button>
                         </th>
                         <th>Product</th>
                         <th>Code</th>
@@ -30,13 +29,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr *ngFor='let product of products'>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCode}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.startRating}}</td>
                         
                     </tr>
                 </tbody>
